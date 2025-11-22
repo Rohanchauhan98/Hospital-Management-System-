@@ -1,0 +1,116 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-image: url('background.jpg'); /* replace with your own image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full viewport height */
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.9), rgba(255, 123, 89, 0.9)); /* gradient */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* shadow */
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Main Form */
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* white with transparency */
+    border-radius: 12px; /* rounded corners */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 320px;
+    margin-top: 30px;
+    text-align: left; /* Align form elements to the left */
+}
+
+/* Form Labels */
+label {
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+}
+
+/* Form Inputs */
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(45deg, #ff6f61, #007bff); /* gradient */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+/* Button hover effect */
+button:hover {
+    background: linear-gradient(45deg, #ff8561, #0056b3); /* hover gradient */
+    transform: scale(1.05); /* zoom effect */
+}
+
+/* Result Text */
+#result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Footer (optional) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

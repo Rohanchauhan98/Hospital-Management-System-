@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Appointments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #28A745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #28A745;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .add-appointment {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #28A745;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Appointments</h1>
+        <nav>
+            <ul>
+                <li><a href="welcome-patient.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="patlogin.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Upcoming Appointments</h2>
+        <div class="add-appointment">
+            <button class="btn" onclick="redirectToAddAppointment()">+ Add New Appointment</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Doctor</th>
+                    <th>Specialization</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentsTable">
+                <!-- Appointments will be loaded here -->
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        // Redirect to Add Appointment page
+        function redirectToAddAppointment() {
+            window.location.href = "add-appointment.html";
+        }
+
+        // Load appointments from localStorage
+        function loadAppointments() {
+            const appointmentsTable = document.getElementById('appointmentsTable');
+            const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+        
+            appointmentsTable.innerHTML = '';
+        
+            appointments.forEach((appointment, index) => {
+                // Check if doctor information exists before trying to split it
+                const doctorName = appointment.doctor ? appointment.doctor.split(' - ')[0] : 'N/A';
+                const doctorSpecialization = appointment.doctor ? appointment.doctor.split(' - ')[1] : 'N/A';
+        
+                const row = `
+                    <tr>
+                        <td>${appointment.date}</td>
+                        <td>${appointment.time}</td>
+                        <td>${doctorName}</td>
+                        <td>${doctorSpecialization}</td>
+                        <td>${appointment.notes || 'N/A'}</td>
+                        <td><button class="delete-btn" onclick="deleteAppointment(${index})">Delete</button></td>
+                    </tr>
+                `;
+                appointmentsTable.innerHTML += row;
+            });
+        }
+
+        // Delete appointment from localStorage
+        function deleteAppointment(index) {
+            let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+            appointments.splice(index, 1); // Remove the appointment at the given index
+            localStorage.setItem('appointments', JSON.stringify(appointments)); // Save the updated array
+
+            // Reload the appointments table
+            loadAppointments();
+        }
+
+        window.onload = loadAppointments;
+    </script>
+</body>
+</html>

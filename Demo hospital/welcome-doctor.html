@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Doctor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .doctor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+        }
+
+        .doctor-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .doctor-card h2 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .doctor-card p {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007BFF;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Doctor Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="http://127.0.0.1:5000/">Colestrol Checker</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="doctorProfiles" style="display: flex; justify-content: center; flex-wrap: wrap; padding: 20px;">
+    <!-- Doctor profiles will be inserted here -->
+</section>
+
+<script>
+    // List of doctors to display on the dashboard
+    const doctors = [
+        { id: 1, name: "Dr. John Doe", specialty: "Cardiology", image: "image2.jpg", profileLink: "doctor-profile-1.html" },
+        { id: 2, name: "Dr. Jane Smith", specialty: "Dermatology", image: "image1.jpg", profileLink: "doctor-profile-2.html" },
+        { id: 3, name: "Dr. Alice Brown", specialty: "Pediatrics", image: "image3.jpg", profileLink: "doctor-profile-3.html" }
+    ];
+
+    // Function to display the doctor profiles
+    function displayDoctors() {
+        const doctorSection = document.getElementById("doctorProfiles");
+
+        doctors.forEach(doctor => {
+            const doctorCard = document.createElement("div");
+            doctorCard.classList.add("doctor-card");
+
+            // Wrap the doctor card in an anchor tag to make it clickable
+            const doctorLink = document.createElement("a");
+            doctorLink.href = doctor.profileLink;
+            doctorLink.style.textDecoration = "none"; // Remove the underline
+
+            doctorCard.innerHTML = `
+                <img src="${doctor.image}" alt="${doctor.name}">
+                <h2>${doctor.name}</h2>
+                <p><strong>Specialty:</strong> ${doctor.specialty}</p>
+            `;
+
+            // Append the card to the link, and then the link to the section
+            doctorLink.appendChild(doctorCard);
+            doctorSection.appendChild(doctorLink);
+        });
+    }
+
+    // Call the function to display doctors when the page loads
+    window.onload = function() {
+        displayDoctors();
+    }
+</script>
+
+</body>
+</html>

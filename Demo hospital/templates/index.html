@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cholesterol Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mlstyle.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Cholesterol Predictor</h1>
+    </header>
+
+    <form id="predictForm">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required>
+
+        <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+        <input type="number" name="trestbps" id="trestbps" required>
+
+        <label for="thalach">Max Heart Rate Achieved (thalach):</label>
+        <input type="number" name="thalach" id="thalach" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('predictForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = `Predicted Cholesterol: ${result.predicted_cholesterol.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

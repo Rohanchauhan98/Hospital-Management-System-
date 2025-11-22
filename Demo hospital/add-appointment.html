@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Appointment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #28A745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .section {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #28A745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #28A745;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Schedule an Appointment</h1>
+        <nav>
+            <ul>
+                <li><a href="welcome-patient.html">Dashboard</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>Book a New Appointment</h2>
+        <form id="appointmentForm">
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" required>
+                <option value="" disabled selected>-- Choose a Doctor --</option>
+                <option value="Dr. John Doe - Cardiology">Dr. John Doe - Cardiology</option>
+                <option value="Dr. Jane Smith - Dermatology">Dr. Jane Smith - Dermatology</option>
+                <option value="Dr. Alice Brown - Pediatrics">Dr. Alice Brown - Pediatrics</option>
+            </select>
+
+            <label for="date">Appointment Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Appointment Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" rows="4" placeholder="Enter any additional details..."></textarea>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const doctor = document.getElementById('doctor').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const notes = document.getElementById('notes').value;
+
+            if (doctor && date && time) {
+                const appointment = { doctor, date, time, notes };
+                let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+                console.log("Existing appointments:", appointments); // Debug log
+                appointments.push(appointment);
+                console.log("Updated appointments:", appointments); // Debug log
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+
+                alert('Appointment successfully added!');
+                window.location.href = "appointments.html"; // Redirect to appointments page
+            } else {
+                alert('Please fill out all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>
