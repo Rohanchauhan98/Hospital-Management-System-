@@ -8,46 +8,46 @@ This project combines a static web interface with a machine-learning model to pr
 
 🖥️ Frontend (HTML, CSS, JavaScript)
 
--Clean and responsive UI
+- Clean and responsive UI
 
--Multiple hospital-related pages including:
+- Multiple hospital-related pages including:
 
--Doctor Login / Register
+- Doctor Login / Register
 
--Patient Login / Register
+- Patient Login / Register
 
--Appointment Booking
+- Appointment Booking
 
--Doctor Profile Pages
+- Doctor Profile Pages
 
--Contact & Main Dashboard
+- Contact & Main Dashboard
 
--Fully client-side interactions using JavaScript
+- Fully client-side interactions using JavaScript
 
--Organized using /static and /templates folders
+- Organized using /static and /templates folders
 
 🧠 Cholesterol Prediction AI Model
 
--Trained ML model saved as heart_disease_model.pkl
+- Trained ML model saved as heart_disease_model.pkl
 
--Takes patient health parameters (Age, BP, Thalach, etc.)
+- Takes patient health parameters (Age, BP, Thalach, etc.)
 
--Predicts cholesterol-related health risk
+- Predicts cholesterol-related health risk
 
--Uses pickle to load the model
+- Uses pickle to load the model
 
--Integrated via API in Flask backend
+- Integrated via API in Flask backend
 
 ⚙️ Backend (Flask + Python)
 
 appl.py handles:
 
--Routing
+- Routing
 
--Reading input from frontend
+- Reading input from frontend
 
--Loading ML model
+- Loading ML model
 
--Returning prediction results
+- Returning prediction results
 
--Simple and scalable API structure
+- Simple and scalable API structure
