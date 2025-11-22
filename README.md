@@ -1,22 +1,39 @@
-# Cholesterol Prediction — Web Project (HTML, CSS, JS) + AI Model
+project:
+  name: "Hospital Management System — HTML, CSS, JavaScript + Cholesterol Prediction AI"
+  description: >
+    This project is a Hospital Management System built using HTML, CSS, JavaScript,
+    and a Cholesterol Prediction AI Model integrated through a Python Flask backend.
+    It allows users to interact with hospital-related pages such as doctor login,
+    patient login, appointments, profiles, and dashboards, while also providing
+    an AI-powered cholesterol risk prediction module.
 
-A lightweight web project with a clean **HTML / CSS / JavaScript** frontend and a simple **Python + Flask** backend that loads a trained machine-learning model to predict cholesterol risk from user inputs.
+features:
+  frontend:
+    description: "Hospital Management Frontend (HTML, CSS, JS)"
+    type: "Static Web UI"
+    pages:
+      - "Doctor Login / Register"
+      - "Patient Login / Register"
+      - "Appointments"
+      - "Doctor Profiles"
+      - "Contact Page"
+      - "Welcome Dashboard"
 
-![Project UI](/mnt/data/0c0c1dc1-ed9d-4d3f-a162-8da76f1a673e.png)
+  ai_model:
+    description: "Cholesterol Prediction AI Model"
+    model_file: "cholesterol_model.pkl"
+    functionality:
+      - "Accepts patient health inputs"
+      - "Predicts cholesterol risk (high/low)"
+      - "Runs preprocessing and inference on backend"
+    backend_usage: "Flask loads and uses the model for predictions"
 
----
-
-## What this project is
-- Frontend: static HTML pages, CSS styles, and client-side JavaScript for UI interactions and form validation.  
-- Backend: small Flask server that receives form data, loads a saved ML model (`*.pkl`), runs preprocessing, and returns predictions.  
-- Model: a trained cholesterol-prediction model saved as a pickle file (e.g. `cholesterol_model.pkl`).
-
----
-
-## Features
-- Clean responsive UI for entering health metrics (age, BP, cholesterol, etc.)  
-- Client-side validation and UX polish with JavaScript  
-- Server-side preprocessing + model inference (returns risk classification or score)  
-- Option to save/log results (extendable to a DB)
-
----
+  backend:
+    framework: "Flask (Python)"
+    main_file: "appl.py"
+    responsibilities:
+      - "Handles routing and page rendering"
+      - "Loads the AI model"
+      - "Receives form or API data"
+      - "Returns predictions dynamically"
+      - "Serves a simple API endpoint for model inference"
