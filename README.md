@@ -1,55 +1,67 @@
-title: "🏥 Hospital Management System — HTML, CSS, JavaScript + Cholesterol Prediction AI"
+project: "Hospital Management System"
+subtitle: "HTML, CSS, JavaScript + Cholesterol Prediction AI Model"
+
 description: >
-  A Hospital Management System built using HTML, CSS, JavaScript, and a Python-based
-  Cholesterol Prediction AI model. The project provides hospital-related interfaces
-  such as login pages, appointments, profiles, and integrates an ML model through
-  a Flask backend for cholesterol level prediction.
+  A web-based Hospital Management System built using HTML, CSS, and JavaScript.
+  The project includes multiple hospital-related pages such as doctor login, patient login,
+  registration, appointments, and profile pages. An AI-powered Cholesterol Prediction Model
+  is integrated using a Python Flask backend to analyze patient health inputs and predict
+  cholesterol risk.
 
 features:
   frontend:
-    - "Fully responsive Hospital Management UI built with HTML, CSS, and JavaScript"
-    - "Doctor & Patient Login pages"
-    - "Registration pages"
-    - "Appointment scheduling"
-    - "Doctor profile pages"
-    - "Patient welcome dashboard"
-    - "Contact & information pages"
+    title: "Frontend (HTML, CSS, JavaScript)"
+    details:
+      - "Doctor Login & Registration"
+      - "Patient Login & Registration"
+      - "Appointment Scheduling System"
+      - "Doctor Profile Pages"
+      - "Welcome Dashboard"
+      - "Contact & Information Pages"
+      - "Static, user-friendly design using pure HTML/CSS/JS"
+
   ai_model:
-    - "Trained Cholesterol Prediction Machine Learning model"
-    - "Model stored as a .pkl file (e.g., heart_disease_model.pkl)"
-    - "Predicts patient cholesterol-related health risks"
-    - "Takes health metrics as input and returns AI prediction"
+    title: "Cholesterol Prediction AI Model"
+    details:
+      - "ML model trained on health data and saved as a .pkl file"
+      - "Predicts cholesterol-related risk from patient input"
+      - "Integrated with Flask backend"
+      - "Real-time prediction using form data"
+
   backend:
-    - "Flask backend handles routing and predictions"
-    - "appl.py loads the AI model and processes user input"
-    - "API endpoint returns cholesterol prediction dynamically"
+    title: "Python Flask Backend"
+    details:
+      - "appl.py handles routing and API communication"
+      - "Loads AI model using pickle"
+      - "Receives form inputs, runs prediction, returns result"
+      - "Simple and efficient HTTP endpoint"
 
 tech_stack:
   - HTML
   - CSS
   - JavaScript
-  - Python (Flask)
-  - Pickle-based ML Model (Cholesterol Prediction)
+  - Python
+  - Flask
+  - Pickle ML Model
 
 project_structure:
-  - static/: "CSS and frontend assets"
-  - templates/: "HTML pages"
-  - appl.py: "Flask backend and model integration"
-  - heart_disease_model.pkl: "Cholesterol prediction model"
-  - heart.csv: "Dataset used for building the AI model"
+  - static/: "CSS styles and static assets"
+  - templates/: "All HTML page templates"
+  - appl.py: "Backend + AI model integration"
+  - heart_disease_model.pkl: "Cholesterol prediction AI model"
+  - heart.csv: "Dataset used for training the model"
 
 how_to_run:
   frontend:
-    - "Open HTML files directly or use Live Server (VS Code extension)."
+    - "Open HTML files directly in a browser"
+    - "Or use VS Code Live Server for auto-refresh preview"
   backend:
-    - "Navigate to project folder containing appl.py"
+    - "Navigate to the project folder containing appl.py"
     - "Run: python appl.py"
-    - "Open browser at: http://127.0.0.1:5000"
-  note: "Model will load automatically, and prediction form will route data to the backend."
+    - "Open: http://127.0.0.1:5000"
 
 use_case: >
-  This project demonstrates how a hospital management interface can integrate
-  AI-powered health predictions to assist doctors and patients by estimating
-  cholesterol-related risk.
+  Demonstrates how a hospital management system can integrate machine learning
+  for real-time medical risk prediction, combining web development and AI.
 
 author: "Rohan Chauhan"
