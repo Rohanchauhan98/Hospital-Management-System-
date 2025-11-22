@@ -1,67 +1,52 @@
-project: "Hospital Management System"
-subtitle: "HTML, CSS, JavaScript + Cholesterol Prediction AI Model"
+🏥 Hospital Management System
+HTML • CSS • JavaScript • Flask • Cholesterol Prediction AI Model
 
-description: >
-  A web-based Hospital Management System built using HTML, CSS, and JavaScript.
-  The project includes multiple hospital-related pages such as doctor login, patient login,
-  registration, appointments, and profile pages. An AI-powered Cholesterol Prediction Model
-  is integrated using a Python Flask backend to analyze patient health inputs and predict
-  cholesterol risk.
+A complete Hospital Management System built using HTML, CSS, JavaScript, and a Cholesterol Prediction AI Model integrated through a Python Flask backend.
+This project combines a static web interface with a machine-learning model to predict cholesterol-related health risks.
 
-features:
-  frontend:
-    title: "Frontend (HTML, CSS, JavaScript)"
-    details:
-      - "Doctor Login & Registration"
-      - "Patient Login & Registration"
-      - "Appointment Scheduling System"
-      - "Doctor Profile Pages"
-      - "Welcome Dashboard"
-      - "Contact & Information Pages"
-      - "Static, user-friendly design using pure HTML/CSS/JS"
+🚀 Features
+🖥️ Frontend (HTML, CSS, JavaScript)
 
-  ai_model:
-    title: "Cholesterol Prediction AI Model"
-    details:
-      - "ML model trained on health data and saved as a .pkl file"
-      - "Predicts cholesterol-related risk from patient input"
-      - "Integrated with Flask backend"
-      - "Real-time prediction using form data"
+Clean and responsive UI
 
-  backend:
-    title: "Python Flask Backend"
-    details:
-      - "appl.py handles routing and API communication"
-      - "Loads AI model using pickle"
-      - "Receives form inputs, runs prediction, returns result"
-      - "Simple and efficient HTTP endpoint"
+Multiple hospital-related pages including:
 
-tech_stack:
-  - HTML
-  - CSS
-  - JavaScript
-  - Python
-  - Flask
-  - Pickle ML Model
+Doctor Login / Register
 
-project_structure:
-  - static/: "CSS styles and static assets"
-  - templates/: "All HTML page templates"
-  - appl.py: "Backend + AI model integration"
-  - heart_disease_model.pkl: "Cholesterol prediction AI model"
-  - heart.csv: "Dataset used for training the model"
+Patient Login / Register
 
-how_to_run:
-  frontend:
-    - "Open HTML files directly in a browser"
-    - "Or use VS Code Live Server for auto-refresh preview"
-  backend:
-    - "Navigate to the project folder containing appl.py"
-    - "Run: python appl.py"
-    - "Open: http://127.0.0.1:5000"
+Appointment Booking
 
-use_case: >
-  Demonstrates how a hospital management system can integrate machine learning
-  for real-time medical risk prediction, combining web development and AI.
+Doctor Profile Pages
 
-author: "Rohan Chauhan"
+Contact & Main Dashboard
+
+Fully client-side interactions using JavaScript
+
+Organized using /static and /templates folders
+
+🧠 Cholesterol Prediction AI Model
+
+Trained ML model saved as heart_disease_model.pkl
+
+Takes patient health parameters (Age, BP, Thalach, etc.)
+
+Predicts cholesterol-related health risk
+
+Uses pickle to load the model
+
+Integrated via API in Flask backend
+
+⚙️ Backend (Flask + Python)
+
+appl.py handles:
+
+Routing
+
+Reading input from frontend
+
+Loading ML model
+
+Returning prediction results
+
+Simple and scalable API structure
