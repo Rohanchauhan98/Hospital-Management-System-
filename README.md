@@ -1,53 +1,102 @@
-🏥 Hospital Management System
-HTML • CSS • JavaScript • Flask • Cholesterol Prediction AI Model
+# Hospital Management System
 
-A complete Hospital Management System built using HTML, CSS, JavaScript, and a Cholesterol Prediction AI Model integrated through a Python Flask backend.
-This project combines a static web interface with a machine-learning model to predict cholesterol-related health risks.
+A web-based Hospital Management System built with **HTML, CSS,
+JavaScript, Python, and Flask**. The project includes hospital-related
+pages for doctors and patients, appointment booking, and a
+machine-learning feature that predicts cholesterol-related health risk
+from patient health parameters.
 
-🚀 Features
+## Features
 
-🖥️ Frontend (HTML, CSS, JavaScript)
+-   Doctor and patient login/registration interfaces
+-   Appointment booking functionality
+-   Doctor profile pages and hospital dashboard
+-   Interactive frontend built with HTML, CSS, and JavaScript
+-   Flask backend for handling routes and prediction requests
+-   Machine-learning model integration using `heart_disease_model.pkl`
 
-- Clean and responsive UI
+## Tech Stack
 
-- Multiple hospital-related pages including:
+-   **Frontend:** HTML, CSS, JavaScript
+-   **Backend:** Python, Flask
+-   **Machine Learning:** Python, scikit-learn-compatible serialized
+    model (see project dependencies)
+-   **Model file:** `heart_disease_model.pkl`
 
-- Doctor Login / Register
+## Run Locally
 
-- Patient Login / Register
+1.  **Clone the repository**
 
-- Appointment Booking
+    ``` bash
+    git clone https://github.com/Rohanchauhan98/Hospital-Management-System-.git
+    ```
 
-- Doctor Profile Pages
+2.  **Open the project folder**
 
-- Contact & Main Dashboard
+    ``` bash
+    cd Hospital-Management-System-
+    ```
 
-- Fully client-side interactions using JavaScript
+3.  **Move into the application folder**
 
-- Organized using /static and /templates folders
+    ``` bash
+    cd "Demo hospital"
+    ```
 
-🧠 Cholesterol Prediction AI Model
+4.  **Create and activate a virtual environment (recommended)**
 
-- Trained ML model saved as heart_disease_model.pkl
+    ``` bash
+    python -m venv venv
+    ```
 
-- Takes patient health parameters (Age, BP, Thalach, etc.)
+    Windows:
 
-- Predicts cholesterol-related health risk
+    ``` bash
+    venv\Scripts\activate
+    ```
 
-- Uses pickle to load the model
+    macOS/Linux:
 
-- Integrated via API in Flask backend
+    ``` bash
+    source venv/bin/activate
+    ```
 
-⚙️ Backend (Flask + Python)
+5.  **Install dependencies**
 
-appl.py handles:
+    If the project contains a `requirements.txt` file:
 
-- Routing
+    ``` bash
+    pip install -r requirements.txt
+    ```
 
-- Reading input from frontend
+    If it does not, install the Python packages required by the imports
+    in `appl.py` and the model code.
 
-- Loading ML model
+6.  **Start the Flask application**
 
-- Returning prediction results
+    ``` bash
+    python appl.py
+    ```
 
-- Simple and scalable API structure
+7.  Open the local address printed in the terminal (commonly
+    `http://127.0.0.1:5000/`) in your browser.
+
+## Machine Learning Model
+
+The application loads the trained model from `heart_disease_model.pkl`
+and uses patient health parameters to generate a cholesterol-related
+risk prediction. This feature is for project demonstration only and is
+**not intended for medical diagnosis or treatment decisions**.
+
+## Future Improvements
+
+-   Add secure authentication and role-based access
+-   Connect patient, doctor, and appointment data to a database
+-   Add input validation and clearer error handling
+-   Improve deployment and production configuration
+
+## Author
+
+**Rohan Chauhan**
+
+GitHub: [@Rohanchauhan98](https://github.com/Rohanchauhan98)
